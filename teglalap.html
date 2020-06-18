@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Téglalap</title>
+        <link
+            rel="stylesheet"
+            href="lib/bootstrap-4.5.0-dist/css/bootstrap.min.css"
+        />
+    </head>
+
+    <body>
+        <a href="/index.html">Home</a>
+        <div class="container">
+            <h3>Kerület- és területszámítás</h3>
+            <div class="row">
+                <div class="col-4">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label
+                                >Add meg a téglalap egyik oldalhosszát:</label
+                            >
+                            <input
+                                type="number"
+                                name="longer-side"
+                                class="form-control"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label
+                                >Add meg a téglalap másik oldalhosszát:</label
+                            >
+                            <input
+                                type="number"
+                                name="shorter-side"
+                                class="form-control"
+                            />
+                        </div>
+                    </form>
+                    <button
+                        onclick="calcKT()"
+                        type="submit"
+                        class="btn btn-primary"
+                    >
+                        Számolj!
+                    </button>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        a = <span class="long-s">0</span>
+                    </div>
+                    <div class="form-group">
+                        b = <span class="short-s">0</span>
+                    </div>
+                    <div class="form-group">
+                        A téglalap kerülete: <span class="kerulet">0</span>
+                    </div>
+                    <div class="form-group">
+                        A téglalap területe: <span class="terulet">0</span>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div
+                        id="color-div"
+                        style="
+                            width: 200px;
+                            height: 200px;
+                            background-color: rgba(20, 22, 187, 0.2);
+                        "
+                    ></div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/teglalap.js"></script>
+    </body>
+</html>

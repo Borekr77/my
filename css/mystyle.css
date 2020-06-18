@@ -1,0 +1,91 @@
+/* html {
+    background-image: url("../img/2927262.jpg");
+    background-position: center;
+} */
+
+@font-face {
+    font-family: "Roboto";
+    src: url("fonts/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Lobster2";
+    src: url("fonts/Lobster2/LobsterTwo-Regular.ttf");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+h1 {
+    color: blue;
+    font-family: "Roboto";
+}
+
+h2 {
+    color: orange;
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+#bio-header {
+    color: greenyellow;
+}
+
+#skills-header {
+    color: purple;
+}
+
+.content {
+    color: cornflowerblue;
+    font-family: "Lobster2";
+    font-size: 18px;
+    text-align: justify;
+    text-transform: lowercase;
+    line-height: 24px;
+}
+
+.bold {
+    color: deeppink;
+    font-weight: bold;
+}
+
+.img-div {
+    background-color: deepskyblue;
+}
+
+.light {
+    background-color: gold;
+}
+
+img {
+    width: 14.4%;
+    box-shadow: 0 0 22px black;
+    margin: 1%;
+}
+
+#img-1 {
+    position: static;
+}
+
+#color-div {
+    width: 200px;
+    height: 200px;
+    background-color: rgba(0, 255, 255, 0.2);
+}

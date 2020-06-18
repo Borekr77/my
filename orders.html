@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orders</title>
+
+</head>
+
+<body>
+    <div w3-include-html="navbar.html"></div>
+    <div>
+        <form>
+            <fieldset>
+                <legend>Személyes adatok</legend>
+                <div>
+                    <label for="name">Név:</label>
+                    <input id="name" name="name" type="text" required />
+                </div>
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input id="email" name="email" type="email" required />
+                </div>
+                <div>
+                    <label for="address">Cím:</label>
+                    <input id="address" name="address" type="text" required />
+                </div>
+                <div>
+                    <label for="comment">Megjegyzés:</label>
+                    <textarea id="comment" name="comment" rows="5"></textarea>
+                </div>
+            </fieldset>
+
+        </form>
+    </div>
+    <fieldset>
+        <legend>Extra 1</legend>
+        <div>
+
+            <span>Extra feltét - checkbox:</span>
+
+            <div>
+                <input checked id="nothing" name="nothing" type="checkbox" value="0" />
+                <label for="nothing">Nem kérek</label>
+            </div>
+            <div>
+                <input id="cheese" name="cheese" type="checkbox" value="300" />
+                <label for="cheese">Feltét 1</label>
+            </div>
+            <div>
+                <input id="double-cheese" name="double-cheese" type="checkbox" value="600" />
+                <label for="double-cheese">Feltét 2</label>
+            </div>
+            <div>
+                <input id="double-meat" name="double-meat" type="checkbox" value="1000" />
+                <label for="double-meat">Feltét 3</label>
+            </div>
+            <div>
+                <input id="double-double" name="double-double" type="checkbox" value="1600" />
+                <label for="double-double">Feltét 4</label>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Extra 2</legend>
+        <span>Extra feltét - radio button:</span>
+
+        <div>
+            <input checked id="nothing1" name="extra" type="radio" value="0" />
+            <label for="nothing1">Nem kérek</label>
+        </div>
+        <div>
+            <input id="cheese1" name="extra" type="radio" value="300" />
+            <label for="cheese1">Feltét 1</label>
+        </div>
+        <div>
+            <input id="double-cheese1" name="extra" type="radio" value="600" />
+            <label for="double-cheese1">Feltét 2</label>
+        </div>
+        <div>
+            <input id="double-meat1" name="extra" type="radio" value="1000" />
+            <label for="double-meat1">Feltét 3</label>
+        </div>
+        <div>
+            <input id="double-double1" name="extra" type="radio" value="1600" />
+            <label for="double-double1">Feltét 4</label>
+        </div>
+        </div>
+    </fieldset>
+
+    <script src="js/include.js"></script>
+
+
+</body>
+
+</html>
