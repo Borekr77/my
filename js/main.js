@@ -1,62 +1,58 @@
 
 
-//document.querySelector("#days-of-week").addEventListener("change", weatherOfDay);
+document.querySelector("#order-form").addEventListener("change", calcAmount);
+document.querySelector("#order-form").addEventListener("input", calcAmount);
 
-function extras() {
+function calcAmount() {
 
-    //let price = 1000;
-    let sum = parseInt(document.querySelector('#sauce').value);
+    let amountInput = document.getElementById("amount-input");
+    let amountNumber = parseInt(amountInput.value);
+    let showAmount = document.querySelector("span.show-amount");
 
-    let checkboxes = document.getElementsByName("CB");
-    let bChecked = true;
+    let summa = parseInt(document.querySelector('#nothing').value);
+    let cbArr = document.getElementsByName("CB");
+    let bChecked = false;
 
-    console.log("sum = " + sum, bChecked);
+    //console.log("summa = " + summa, bChecked, cbArr);
 
-    for (let i = 0; i < checkboxes.length; i++) {
+    //extrák
+    for (let i = 0; i < cbArr.length; i++) {
 
-        if (checkboxes[i].checked) {
-            sum += parseInt(checkboxes[i].value);
-            bChecked = false;
+        if (cbArr[i].checked) {
+            summa += parseInt(cbArr[i].value);
+            bChecked = true;
+
+            //console.log("summa = " + summa, bChecked);
         }
+
     }
 
     if (bChecked) {
-        document.getElementById("nothing").checked = true;
-    } else {
         document.getElementById("nothing").checked = false;
+    } else {
+        document.getElementById("nothing").checked = true;
     }
 
 
-    price += sum;
-
-    console.log("sum = " + sum);
-    console.log("price = " + price);
-}
-
-
-// A megrendelés összege:
-function calcAmount() {
-
-
-    let amountInput = document.querySelector("input[name=amount-input]");
-    let showAmount = document.querySelector("span.show-amount");
-
-    let amountNumber = parseInt(amountInput.value);
-
+    //mennyiség 
     if (amountNumber > 10) {
+
+        amountInput.value = "1";
         alert("Max 10!");
+        showAmount.innerHTML = summa;
+
     } else if (amountNumber < 1) {
+
+        amountInput.value = "1";
         alert("Min 1!");
+        showAmount.innerHTML = summa;
+
     } else {
-        let amount = amountNumber * price;
+        let amount = amountNumber * summa;
         showAmount.innerHTML = amount;
     }
+
+
+
+
 }
-
-
-
-
-
-
-
-

@@ -3,6 +3,7 @@
 
 document.querySelector("#days-of-week").addEventListener("change", weatherOfDay);
 
+
 function weatherOfDay() {
     let weekDegree = [2, 18, -1, 22, 30, 40, -10];
     let offers = ["forró csoki", "meleg tea", "finom süti", "fagyi", "jéghideg limonádé"];
