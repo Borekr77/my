@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="lib/bootstrap-4.5.0-dist/css/bootstrap.min.css" />
     <title>Orders</title>
 </head>
 
@@ -77,65 +78,38 @@
 
                     <form id="order-form" action="">
 
-                        <div  class="form-group">
+                        <div class="form-group">
                             <label class="label label-block" for="extra">Extrák:</label>
 
                             <div class="form-check">
-                                <input 
-                                checked 
-                                class="form-check-input" 
-                                id="nothing" 
-                                name="nothing" 
-                                type="checkbox"
-                                value="1200" />
-                                <label class="form-check-label" for="nothing"> <em>nem kérek extrát (alap hamburger: 1200 Ft)</em> </label>
+                                <input checked class="form-check-input" id="nothing" name="nothing" type="checkbox"
+                                    value="1200" />
+                                <label class="form-check-label" for="nothing"> <em>nem kérek extrát (alap hamburger:
+                                        1200 Ft)</em> </label>
                             </div>
                             <div class="form-check">
-                                <input 
-                                class="form-check-input" 
-                                id="sauce" 
-                                name="CB" 
-                                type="checkbox" 
-                                value="100" />
+                                <input class="form-check-input" id="sauce" name="CB" type="checkbox" value="100" />
                                 <label class="form-check-label" for="sauce">csípős szósz (+100 Ft)</label>
                             </div>
                             <div class="form-check">
-                                <input 
-                                class="form-check-input" 
-                                id="coleshaw" 
-                                name="CB" 
-                                type="checkbox" 
-                                value="400" />
+                                <input class="form-check-input" id="coleshaw" name="CB" type="checkbox" value="400" />
                                 <label class="form-check-label" for="coleshaw">coleshaw (+400 Ft)</label>
                             </div>
                             <div class="form-check">
-                                <input 
-                                class="form-check-input" 
-                                id="double-cheese" 
-                                name="CB" 
-                                type="checkbox"
-                                value="300" />
+                                <input class="form-check-input" id="double-cheese" name="CB" type="checkbox"
+                                    value="300" />
                                 <label class="form-check-label" for="double-cheese">dupla sajt (+300 Ft)</label>
                             </div>
                             <div class="form-check">
-                                <input 
-                                class="form-check-input" 
-                                id="doube-meat" 
-                                name="CB" 
-                                type="checkbox"
-                                value="1000" />
+                                <input class="form-check-input" id="doube-meat" name="CB" type="checkbox"
+                                    value="1000" />
                                 <label class="form-check-label" for="double-meat">dupla hús (+1000 Ft)</label>
                             </div>
                             <div class="form-check">
-                                <input 
-                                class="form-check-input" 
-                                id="bacon" 
-                                name="CB" 
-                                type="checkbox" 
-                                value="500" />
+                                <input class="form-check-input" id="bacon" name="CB" type="checkbox" value="500" />
                                 <label class="form-check-label" for="bacon">bacon (+500 Ft)</label>
                             </div>
-                            
+
                         </div>
 
                         <div class="form-group">
@@ -147,7 +121,7 @@
                         <div class="form-group">Fizetendő: <span class="show-amount">0</span> Ft
                         </div>
 
-                        
+
 
                         <button type="button" class="btn btn-primary">Megrendelés
                         </button>
@@ -157,9 +131,10 @@
         </div>
     </div>
 
-    <script src="js/include.js"></script>
     <script src="js/main.js"></script>
-    <!-- <script src="js/widget.js"></script> -->
+    <script src="js/widget.js"></script>
+    <script src="js/include.js"></script>
+
 </body>
 
 </html>

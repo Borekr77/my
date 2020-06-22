@@ -1,47 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            rel="stylesheet"
-            href="lib/bootstrap-4.5.0-dist/css/bootstrap.min.css"
-        />
-    </head>
-    <body>
-        <div class="alert alert-info container">
-            <form>
-                <div class="form-inline">
-                    <div class="col-auto">IDŐJÁRÁS-ELŐREJELZÉS</div>
-                    <div class="col-auto">
-                        <div class="form-group">
-                            <select
-                                class="custom-select"
-                                name="days-of-week"
-                                id="days-of-week"
-                            >
-                                <option selected>Válassz...</option>
-                                <option value="0">Hétfő</option>
-                                <option value="1">Kedd</option>
-                                <option value="2">Szerda</option>
-                                <option value="3">Csütörtök</option>
-                                <option value="4">Péntek</option>
-                                <option value="5">Szombat</option>
-                                <option value="6">Vasárnap</option>
-                            </select>
-                        </div>
-                    </div>
 
-                    <div class="col-auto">
-                        A hőmérséklet:
-                        <span id="today-degree">0</span> &degC
-                    </div>
-                    <div class="col-auto">
-                        Mai ajánlatunk: <span id="today-offer"></span>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="lib/bootstrap-4.5.0-dist/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <div class="alert alert-info container">
+        <form>
+            <div class="form-inline">
+                <div class="col-auto">IDŐJÁRÁS-ELŐREJELZÉS</div>
+                <div class="col-auto">
+                    <div class="form-group">
+                        <select class="custom-select" name="days-of-week" id="days-of-week">
+                            <option selected>Válassz...</option>
+                            <option value="0">Hétfő</option>
+                            <option value="1">Kedd</option>
+                            <option value="2">Szerda</option>
+                            <option value="3">Csütörtök</option>
+                            <option value="4">Péntek</option>
+                            <option value="5">Szombat</option>
+                            <option value="6">Vasárnap</option>
+                        </select>
                     </div>
                 </div>
-            </form>
-        </div>
-        <script src="js/widget.js"></script>
-    </body>
+
+                <div class="col-auto">
+                    A hőmérséklet:
+                    <span id="today-degree">0</span> &degC
+                </div>
+                <div class="col-auto">
+                    Mai ajánlatunk: <span id="today-offer"></span>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- <script src="js/widget.js"></script> -->
+</body>
+
 </html>
