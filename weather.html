@@ -9,13 +9,26 @@
 
 <body>
     <div class="alert alert-info container">
-        <form>
-            <div class="form-inline">
-                <div class="col-auto">IDŐJÁRÁS-ELŐREJELZÉS</div>
-                <div class="col-auto">
-                    <div class="form-group">
+
+        <!--  <div class="row">
+            <div class="col-4">IDŐJÁRÁS</div>
+            <div class="col-4 text-center">Válaszd ki a napot!</div>
+            <div class="col-4 text-right"></div>
+        </div> -->
+
+        <div class="row">
+            <div class="col-4"><b>Heti időjárás-előrejelzés</b></div>
+            <div class="col-4"></div>
+            <div class="col-4 text-right"><b>Ajánlatunk erre a napra:</b></div>
+        </div>
+        <div class="row">
+
+            <div class="col-4"><span id="today-degree">0</span> &degC (<span id="today-fahrenheit">0</span> &degF)</div>
+            <div class="col-4">
+                <form>
+                    <div class="form-group col-auto">
                         <select class="custom-select" name="days-of-week" id="days-of-week">
-                            <option selected>Válassz...</option>
+                            <option selected>Válaszd ki a napot!</option>
                             <option value="0">Hétfő</option>
                             <option value="1">Kedd</option>
                             <option value="2">Szerda</option>
@@ -25,19 +38,37 @@
                             <option value="6">Vasárnap</option>
                         </select>
                     </div>
-                </div>
 
-                <div class="col-auto">
-                    A hőmérséklet:
-                    <span id="today-degree">0</span> &degC
-                </div>
-                <div class="col-auto">
-                    Mai ajánlatunk: <span id="today-offer"></span>
-                </div>
+                </form>
             </div>
-        </form>
+            <div class="col-4 text-right">
+                <i><span id="today-offer"></span></i>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4 text-left">
+                <small>MIN: <span id="min-degree">0</span> &degC (<span id="min-fahrenheit">0</span> &degF)</small>
+            </div>
+            <div class="col-4 text-center">
+                <small>AVG: <span id="avg-degree">0</span> &degC (<span id="avg-fahrenheit">0</span> &degF)</small>
+            </div>
+            <div class="col-4 text-right">
+                <small>MAX: <span id="max-degree">0</span> &degC (<span id="max-fahrenheit">0</span> &degF)</small>
+            </div>
+        </div>
+
     </div>
-    <!-- <script src="js/widget.js"></script> -->
+
+
+    <!--  <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                Search
+            </button>
+        </form> 
+
+   <script src="js/widget.js"></script>-->
 </body>
 
 </html>

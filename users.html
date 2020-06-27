@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Bootstrap</title>
+    <link rel="stylesheet" href="lib/bootstrap-4.5.0-dist/css/bootstrap.min.css" />
+    <script src="https://kit.fontawesome.com/0ee724218e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div w3-include-html="navbar.html"></div>
+
+    <h3>Felhasználók felvétele</h3>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <form id="new-user-form" class="form-inline">
+
+                    <label class="sr-only" for="userSurName">Vezetéknév</label>
+                    <input type="text" name="userSurName" id="userSurName" class="form-control mb-2 mr-sm-2"
+                        placeholder="Vezetéknév">
+
+                    <label class="sr-only" for="userFirstName">Keresztnév</label>
+                    <input type="text" name="userFirstName" id="userFirstName" class="form-control mb-2 mr-sm-2"
+                        placeholder="Keresztnév">
+
+                    <label class="sr-only" for="userAge">Életkor</label>
+                    <input type="text" name="userAge" id="userAge" class="form-control mb-2 mr-sm-2"
+                        placeholder="Életkor">
+
+                    <button type="submit" id="send-button" class="btn btn-success mb-2 mr-sm-2">Küldés</button>
+                </form>
+
+            </div>
+            <div class="col-2"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <table id="userTable" class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Vezetéknév</th>
+                            <th>Keresztnév</th>
+                            <th>Életkor</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+
+    <script src="js/include.js"></script>
+    <script src="js/users.js"></script>
+</body>
+
+</html>
