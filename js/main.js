@@ -4,13 +4,13 @@ let delivery = 500;
 let showAmount = document.querySelector("span.show-amount");
 showAmount.innerHTML = price + delivery;
 
-//Kiszállítás szöveg - elrejtve
+//Kiszállítás szöveg
 let deliveryText = document.createElement("small");
 deliveryText.className = "form-text text-muted";
-deliveryText.innerHTML = "Az ár tartalmazza a házhoz szállítási díjat! (5000 Ft alatti rendelés esetén: +500 Ft)";
+deliveryText.innerHTML = "Az ár tartalmazza a házhoz szállítási díjat (500 Ft)! (5000 Ft feletti rendelés esetén a kiszállítás ingyenes.)";
 let parent = document.querySelector("#amount-text");
 parent.appendChild(deliveryText);
-deliveryText.style.display = "none";
+
 
 //Űrlap-esemény indítja a számításokat
 document.querySelector("#order-form").addEventListener("change", calcAmount);
