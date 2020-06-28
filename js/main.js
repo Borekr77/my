@@ -1,3 +1,4 @@
+//Kiszállítás szöveg - elrejtve
 let deliveryText = document.createElement("small");
 deliveryText.className = "form-text text-muted";
 deliveryText.innerHTML = "Az ár tartalmazza a házhoz szállítási díjat! (5000 Ft alatti rendelés esetén: +500 Ft)";
@@ -6,32 +7,32 @@ let parent = document.querySelector("#amount-text");
 parent.appendChild(deliveryText);
 deliveryText.style.display = "none";
 
-
+//Űrlap-esemény indítja a számításokat
 document.querySelector("#order-form").addEventListener("change", calcAmount);
 document.querySelector("#order-form").addEventListener("input", calcAmount);
 
-function calcAmount() {
 
-    let amountInput = document.getElementById("amount-input");
-    let amountNumber = parseInt(amountInput.value);
-    let showAmount = document.querySelector("span.show-amount");
+//Bemenő adatok: alapár, extrák
+function calcAmount() {
 
     let summa = parseInt(document.querySelector('#nothing').value);
     let cbArr = document.getElementsByName("CB");
+
+    calcExtras(summa, cbArr);
+}
+
+//Extrák összeszámolása
+function calcExtras(summa, cbArr) {
+    let amountInput = document.getElementById("amount-input");
+    let amountNumber = parseInt(amountInput.value);
+    amountNumber = isNaN(amountNumber) ? 0 : amountNumber;
     let bChecked = false;
 
-    //console.log("summa = " + summa, bChecked, cbArr);
-
-    //extrák
     for (let i = 0; i < cbArr.length; i++) {
-
         if (cbArr[i].checked) {
             summa += parseInt(cbArr[i].value);
             bChecked = true;
-
-            //console.log("summa = " + summa, bChecked);
         }
-
     }
 
     if (bChecked) {
@@ -40,40 +41,38 @@ function calcAmount() {
         document.getElementById("nothing").checked = true;
     }
 
+    calcAndShowSumPrice(summa, amountNumber);
+}
 
-    //mennyiség
+/* Fizetendő ár kiszámítása és megjelenítése az exrák és a mennyiség alapján */
+function calcAndShowSumPrice(summa, amountNumber) {
+    let showAmount = document.querySelector("span.show-amount");
     let amount = amountNumber * summa;
-    if (amountNumber > 10) {
 
+    if (amountNumber < 1 || amountNumber > 10) {
         amountInput.value = "1";
-        alert("Max 10!");
-        showAmount.innerHTML = summa;
-
-    } else if (amountNumber < 1) {
-
-        amountInput.value = "1";
-        alert("Min 1!");
+        alert("Minimum 1 db, maximum 10 db rendelhető!");
         showAmount.innerHTML = summa;
 
     } else if (amount < 5000) {
         amount += 500;
         showAmount.innerHTML = amount;
         deliveryText.style.display = "block";
+
     } else {
         showAmount.innerHTML = amount;
         deliveryText.style.display = "none";
     }
-
 }
 
-// Alert üzenet eltüntetése
+
+//Alert üzenet eltüntetése
 let alertCloseButtons = document.querySelectorAll(".close[data-dismiss='alert']");
 let alertCloseEventHandlerFunction = function (ev) {
     this.parentElement.style.display = "none";
 };
 for (let i = 0; i < alertCloseButtons.length; i++) {
     alertCloseButtons[i].addEventListener("click", alertCloseEventHandlerFunction);
-
 };
 
 //Szószok-select elem feltöltése
@@ -93,4 +92,4 @@ while (k < sauces.length) {
     option.innerHTML = sauces[k];
     sauceSelect.appendChild(option);
     k++;
-}
+};

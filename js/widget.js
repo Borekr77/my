@@ -3,12 +3,37 @@ let weekDegree = [2, 18, -1, 22, 30, 40, -10];
 let offers = ["forró csoki", "meleg tea", "finom süti", "fagyi", "jéghideg limonádé"];
 let intervalDegree = [0, 15, 20, 25, 100];
 
+//min, max, avg megjelenítése
+window.addEventListener("load", function ()  {
 
-//Konverzó Fahrenheitre függvénye
-let celsiusToFahrenheit = function (celsiusTemp) {
+        let minDegree = document.querySelector("span#min-degree");
+        let minFahrenheit = document.querySelector("span#min-fahrenheit");
+        let minCelsiusTemp = minTemp(weekDegree)
+        minDegree.innerHTML = minCelsiusTemp;
+        minFahrenheit.innerHTML = celsiusToFahrenheit(minCelsiusTemp);
+
+        let maxDegree = document.querySelector("span#max-degree");
+        let maxFahrenheit = document.querySelector("span#max-fahrenheit");
+        let maxCelsiusTemp = maxTemp(weekDegree)
+        maxDegree.innerHTML = maxCelsiusTemp;
+        maxFahrenheit.innerHTML = celsiusToFahrenheit(maxCelsiusTemp);
+
+        let avgDegree = document.querySelector("span#avg-degree");
+        let avgFahrenheit = document.querySelector("span#avg-fahrenheit");
+        let avgCelsiusTemp = avgTemp(weekDegree)
+        avgDegree.innerHTML = avgCelsiusTemp;
+        avgFahrenheit.innerHTML = celsiusToFahrenheit(avgCelsiusTemp);
+
+        console.log(minDegree, maxDegree, avgDegree)
+    }
+
+
+);
+
+//Konverzó Fahrenheitre
+function celsiusToFahrenheit(celsiusTemp) {
     return celsiusTemp / 5 * 9 + 32;
 }
-
 
 //Heti minimum-hőmérséklet függvénye
 function minTemp(weekDegree) {
@@ -45,12 +70,9 @@ function avgTemp(weekDegree) {
 
 /* Select-change-re lefutó függvény
     - kiválasztott nap hőmérséklete
-    - ahhoz tartozó ajánlat
-    - min-max-avg
     - fahrenheitben is
+    - ahhoz tartozó ajánlat
 */
-
-/* document.addEventListener("load", function (ev) { alert(42) }); */
 document.addEventListener("change", function (ev) {
     var elem = ev.target;
 
@@ -72,25 +94,5 @@ document.addEventListener("change", function (ev) {
             }
         }
     }
-
-    let minDegree = document.querySelector("span#min-degree");
-    let minFahrenheit = document.querySelector("span#min-fahrenheit");
-    let minCelsiusTemp = minTemp(weekDegree)
-    minDegree.innerHTML = minCelsiusTemp;
-    minFahrenheit.innerHTML = celsiusToFahrenheit(minCelsiusTemp);
-
-
-    let maxDegree = document.querySelector("span#max-degree");
-    let maxFahrenheit = document.querySelector("span#max-fahrenheit");
-    let maxCelsiusTemp = maxTemp(weekDegree)
-    maxDegree.innerHTML = maxCelsiusTemp;
-    maxFahrenheit.innerHTML = celsiusToFahrenheit(maxCelsiusTemp);
-
-
-    let avgDegree = document.querySelector("span#avg-degree");
-    let avgFahrenheit = document.querySelector("span#avg-fahrenheit");
-    let avgCelsiusTemp = avgTemp(weekDegree)
-    avgDegree.innerHTML = avgCelsiusTemp;
-    avgFahrenheit.innerHTML = celsiusToFahrenheit(avgCelsiusTemp);
-
 });
+
