@@ -24,18 +24,12 @@ setTimeout(function () {
     avgDegree.innerHTML = avgCelsiusTemp;
     avgFahrenheit.innerHTML = celsiusToFahrenheit(avgCelsiusTemp);
 
-    // Balázs Kiegészítés 
+
     let datum = new Date();
     let nap = datum.getDay();
-    kiir(nap);
-    if (nap == 0) {
-        document.getElementById("days-of-week").selectedIndex = 7;
-        kiir(6);
-    } else {
-        document.getElementById("days-of-week").selectedIndex = nap;
-        kiir(nap);
-    }
-    // Balázs Kiegészítés vége
+    document.getElementById("days-of-week").selectedIndex = nap;
+    kiir(nap - 1);
+
 }, 1000);
 
 //Konverzió Fahrenheitre
@@ -75,7 +69,6 @@ function avgTemp(weekDegree) {
 }
 
 
-
 /* Select-change-re lefutó függvény
     - kiválasztott nap hőmérséklete
     - fahrenheitben is
@@ -88,13 +81,11 @@ document.addEventListener("change", function (ev) {
         let weekSelect = document.getElementById("days-of-week");
         let valueSelectedDay = parseInt(weekSelect.options[weekSelect.selectedIndex].value);
 
-        // Balázs Kiegészítés kiírás külön függvényben
         kiir(valueSelectedDay);
     }
 
 });
 
-// Balázs Kiegészítés kiírás külön függvényben
 
 function kiir(hetnapja) {
     let showDegree = document.querySelector("span#today-degree");
