@@ -1,8 +1,13 @@
+//Init data
+let price = 1200;
+let delivery = 500;
+let showAmount = document.querySelector("span.show-amount");
+showAmount.innerHTML = price + delivery;
+
 //Kiszállítás szöveg - elrejtve
 let deliveryText = document.createElement("small");
 deliveryText.className = "form-text text-muted";
 deliveryText.innerHTML = "Az ár tartalmazza a házhoz szállítási díjat! (5000 Ft alatti rendelés esetén: +500 Ft)";
-
 let parent = document.querySelector("#amount-text");
 parent.appendChild(deliveryText);
 deliveryText.style.display = "none";
@@ -38,16 +43,14 @@ function calcAmount() {
     }
 
     //Mennyiség-validálás és a teljes ár kiíratása
-    let showAmount = document.querySelector("span.show-amount");
-    let amount = amountNumber * summa;
+    let amount = amountNumber * (summa + price);
 
     if (amountNumber < 1 || amountNumber > 10) {
-        amountInput.value = "1";
         alert("Minimum 1 db, maximum 10 db rendelhető!");
-        showAmount.innerHTML = summa;
+        amountInput.value = "1";
 
     } else if (amount < 5000) {
-        amount += 500;
+        amount += delivery;
         showAmount.innerHTML = amount;
         deliveryText.style.display = "block";
 
@@ -55,6 +58,7 @@ function calcAmount() {
         showAmount.innerHTML = amount;
         deliveryText.style.display = "none";
     }
+
 }
 
 
