@@ -4,7 +4,7 @@ let offers = ["forró csoki", "meleg tea", "finom süti", "fagyi", "jéghideg li
 let intervalDegree = [0, 15, 20, 25, 100];
 
 //min, max, avg megjelenítése
-window.addEventListener("load", function () {
+setTimeout(function () {
 
     let minDegree = document.querySelector("span#min-degree");
     let minFahrenheit = document.querySelector("span#min-fahrenheit");
@@ -36,11 +36,9 @@ window.addEventListener("load", function () {
         kiir(nap);
     }
     // Balázs Kiegészítés vége
-}
+}, 1000);
 
-);
-
-//Konverzó Fahrenheitre
+//Konverzió Fahrenheitre
 function celsiusToFahrenheit(celsiusTemp) {
     return celsiusTemp / 5 * 9 + 32;
 }
