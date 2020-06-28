@@ -24,23 +24,22 @@ window.addEventListener("load", function () {
     avgDegree.innerHTML = avgCelsiusTemp;
     avgFahrenheit.innerHTML = celsiusToFahrenheit(avgCelsiusTemp);
 
-    // Balázs Kiegészítés 
+    console.log(minDegree, maxDegree, avgDegree);
+
     let datum = new Date();
     let nap = datum.getDay();
     kiir(nap);
     if (nap == 0) {
         document.getElementById("days-of-week").selectedIndex = 7;
-        kiir(6);
     } else {
         document.getElementById("days-of-week").selectedIndex = nap;
-        kiir(nap);
     }
-    // Balázs Kiegészítés vége
 }
+
 
 );
 
-//Konverzó Fahrenheitre
+//Konverzió Fahrenheitre
 function celsiusToFahrenheit(celsiusTemp) {
     return celsiusTemp / 5 * 9 + 32;
 }
@@ -88,16 +87,48 @@ document.addEventListener("change", function (ev) {
 
     if (elem && elem.id == "days-of-week") {
         let weekSelect = document.getElementById("days-of-week");
+        let showDegree = document.querySelector("span#today-degree");
+        let showFahrenheit = document.querySelector("span#today-fahrenheit");
+        let showOffer = document.querySelector("span#today-offer");
+
         let valueSelectedDay = parseInt(weekSelect.options[weekSelect.selectedIndex].value);
+        showDegree.innerHTML = weekDegree[valueSelectedDay];
+        showFahrenheit.innerHTML = celsiusToFahrenheit(weekDegree[valueSelectedDay]);
 
-        // Balázs Kiegészítés kiírás külön függvényben
-        kiir(valueSelectedDay);
+        for (let i = 0; i < intervalDegree.length; i++) {
+
+            if (weekDegree[valueSelectedDay] < intervalDegree[i]) {
+                showOffer.innerHTML = offers[i];
+                break;
+            }
+        }
     }
-
 });
 
-// Balázs Kiegészítés kiírás külön függvényben
+/* //S.S.
+window.addEventListener("load", function () {
+    let date = new Date();
 
+    let showDegree = document.querySelector("span#today-degree");
+    let showFahrenheit = document.querySelector("span#today-fahrenheit");
+    let showOffer = document.querySelector("span#today-offer");
+
+    let valueSelectedDay;
+    if (date.getDay() == 0) { valueSelectedDay = date.getDay() + 6 } else { valueSelectedDay = date.getDay() - 1 };
+    showDegree.innerHTML = weekDegree[valueSelectedDay];
+    showFahrenheit.innerHTML = celsiusToFahrenheit(weekDegree[valueSelectedDay]);
+
+    for (let i = 0; i < intervalDegree.length; i++) {
+
+        if (weekDegree[valueSelectedDay] < intervalDegree[i]) {
+            showOffer.innerHTML = offers[i];
+            break;
+        }
+    }
+
+}); */
+
+//Balázs
 function kiir(hetnapja) {
     let showDegree = document.querySelector("span#today-degree");
     let showFahrenheit = document.querySelector("span#today-fahrenheit");
@@ -116,5 +147,3 @@ function kiir(hetnapja) {
     }
 
 }
-
-

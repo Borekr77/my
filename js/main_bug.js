@@ -11,17 +11,21 @@ deliveryText.style.display = "none";
 document.querySelector("#order-form").addEventListener("change", calcAmount);
 document.querySelector("#order-form").addEventListener("input", calcAmount);
 
-/* Fizetendő ár kiszámítása és megjelenítése az exrák és a mennyiség alapján */
+
+//Bemenő adatok: alapár, extrák
 function calcAmount() {
 
     let summa = parseInt(document.querySelector('#nothing').value);
     let cbArr = document.getElementsByName("CB");
 
+    calcExtras(summa, cbArr);
+}
+
+//Extrák összeszámolása
+function calcExtras(summa, cbArr) {
     let amountInput = document.getElementById("amount-input");
     let amountNumber = parseInt(amountInput.value);
     amountNumber = isNaN(amountNumber) ? 0 : amountNumber;
-
-    //Extrák összeszámolása
     let bChecked = false;
 
     for (let i = 0; i < cbArr.length; i++) {
@@ -37,7 +41,11 @@ function calcAmount() {
         document.getElementById("nothing").checked = true;
     }
 
-    //Mennyiség-validálás és a teljes ár kiíratása
+    calcAndShowSumPrice(summa, amountNumber);
+}
+
+/* Fizetendő ár kiszámítása és megjelenítése az exrák és a mennyiség alapján */
+function calcAndShowSumPrice(summa, amountNumber) {
     let showAmount = document.querySelector("span.show-amount");
     let amount = amountNumber * summa;
 

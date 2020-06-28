@@ -24,23 +24,13 @@ window.addEventListener("load", function () {
     avgDegree.innerHTML = avgCelsiusTemp;
     avgFahrenheit.innerHTML = celsiusToFahrenheit(avgCelsiusTemp);
 
-    // Balázs Kiegészítés 
-    let datum = new Date();
-    let nap = datum.getDay();
-    kiir(nap);
-    if (nap == 0) {
-        document.getElementById("days-of-week").selectedIndex = 7;
-        kiir(6);
-    } else {
-        document.getElementById("days-of-week").selectedIndex = nap;
-        kiir(nap);
-    }
-    // Balázs Kiegészítés vége
+    console.log(minDegree, maxDegree, avgDegree)
 }
+
 
 );
 
-//Konverzó Fahrenheitre
+//Konverzió Fahrenheitre
 function celsiusToFahrenheit(celsiusTemp) {
     return celsiusTemp / 5 * 9 + 32;
 }
@@ -88,33 +78,21 @@ document.addEventListener("change", function (ev) {
 
     if (elem && elem.id == "days-of-week") {
         let weekSelect = document.getElementById("days-of-week");
+        let showDegree = document.querySelector("span#today-degree");
+        let showFahrenheit = document.querySelector("span#today-fahrenheit");
+        let showOffer = document.querySelector("span#today-offer");
+
         let valueSelectedDay = parseInt(weekSelect.options[weekSelect.selectedIndex].value);
+        showDegree.innerHTML = weekDegree[valueSelectedDay];
+        showFahrenheit.innerHTML = celsiusToFahrenheit(weekDegree[valueSelectedDay]);
 
-        // Balázs Kiegészítés kiírás külön függvényben
-        kiir(valueSelectedDay);
-    }
+        for (let i = 0; i < intervalDegree.length; i++) {
 
-});
-
-// Balázs Kiegészítés kiírás külön függvényben
-
-function kiir(hetnapja) {
-    let showDegree = document.querySelector("span#today-degree");
-    let showFahrenheit = document.querySelector("span#today-fahrenheit");
-    let showOffer = document.querySelector("span#today-offer");
-
-    let valueSelectedDay = hetnapja;
-    showDegree.innerHTML = weekDegree[valueSelectedDay];
-    showFahrenheit.innerHTML = celsiusToFahrenheit(weekDegree[valueSelectedDay]);
-
-    for (let i = 0; i < intervalDegree.length; i++) {
-
-        if (weekDegree[valueSelectedDay] < intervalDegree[i]) {
-            showOffer.innerHTML = offers[i];
-            break;
+            if (weekDegree[valueSelectedDay] < intervalDegree[i]) {
+                showOffer.innerHTML = offers[i];
+                break;
+            }
         }
     }
-
-}
-
+});
 
