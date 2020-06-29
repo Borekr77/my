@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="js/include.js"></script>
 
 <head>
     <meta charset="UTF-8" />
@@ -9,8 +10,10 @@
 </head>
 
 <body>
-    <div w3-include-html="navbar.html"></div>
-    <div w3-include-html="weather.html"></div>
+    <div id="navbar-included"></div>
+    <div id="weather-included"></div>
+    <!-- <div w3-include-html="navbar.html"></div>
+    <div w3-include-html="weather.html"></div> -->
     <!-- <iframe src="weather.html" frameborder="0" width=100%></iframe> -->
 
     <div class="container">
@@ -131,9 +134,9 @@
         </div>
     </div>
 
-    <script src="js/include.js"></script>
     <script src="js/widget.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/include-controller.js"></script>
 
 </body>
 

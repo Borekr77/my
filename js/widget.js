@@ -1,10 +1,15 @@
 //Alapadatok
 let weekDegree = [2, 18, -1, 22, 30, 40, -10];
-let offers = ["forró csoki", "meleg tea", "finom süti", "fagyi", "jéghideg limonádé"];
+let offers = ["forró csoki",
+    "meleg tea",
+    "finom süti",
+    "fagyi",
+    "jéghideg limonádé"];
 let intervalDegree = [0, 15, 20, 25, 100];
 
-//min, max, avg, mai hőmérséklet, mai ajánlat megjelenítése
+/* //min, max, avg, mai hőmérséklet, mai ajánlat megjelenítése
 setTimeout(function () {
+    //window.onload = function () {
 
     let minDegree = document.querySelector("span#min-degree");
     let minFahrenheit = document.querySelector("span#min-fahrenheit");
@@ -30,8 +35,8 @@ setTimeout(function () {
     let selectedIndexOfWeek = document.getElementById("days-of-week").selectedIndex;
     selectedIndexOfWeek = String(napIndex);
     kiir(napIndex);
-
-}, 1000);
+    //}
+}, 1000); */
 
 //Konverzió Fahrenheitre
 function celsiusToFahrenheit(celsiusTemp) {
