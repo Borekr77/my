@@ -3,7 +3,7 @@ let weekDegree = [2, 18, -1, 22, 30, 40, -10];
 let offers = ["forró csoki", "meleg tea", "finom süti", "fagyi", "jéghideg limonádé"];
 let intervalDegree = [0, 15, 20, 25, 100];
 
-//min, max, avg megjelenítése
+//min, max, avg, mai hőmérséklet, mai ajánlat megjelenítése
 setTimeout(function () {
 
     let minDegree = document.querySelector("span#min-degree");
@@ -25,10 +25,11 @@ setTimeout(function () {
     avgFahrenheit.innerHTML = celsiusToFahrenheit(avgCelsiusTemp);
 
 
-    let datum = new Date();
-    let nap = datum.getDay();
-    document.getElementById("days-of-week").selectedIndex = nap;
-    kiir(nap - 1);
+    let nap = new Date().getDay(); //number, a mai nap indexe (V-0, H-1, K-2, ...)
+    let napIndex = nap - 1;
+    let selectedIndexOfWeek = document.getElementById("days-of-week").selectedIndex;
+    selectedIndexOfWeek = String(napIndex);
+    kiir(napIndex);
 
 }, 1000);
 
@@ -87,18 +88,17 @@ document.addEventListener("change", function (ev) {
 });
 
 
-function kiir(hetnapja) {
+function kiir(napIndex) {
     let showDegree = document.querySelector("span#today-degree");
     let showFahrenheit = document.querySelector("span#today-fahrenheit");
     let showOffer = document.querySelector("span#today-offer");
 
-    let valueSelectedDay = hetnapja;
-    showDegree.innerHTML = weekDegree[valueSelectedDay];
-    showFahrenheit.innerHTML = celsiusToFahrenheit(weekDegree[valueSelectedDay]);
+    showDegree.innerHTML = weekDegree[napIndex];
+    showFahrenheit.innerHTML = celsiusToFahrenheit(weekDegree[napIndex]);
 
     for (let i = 0; i < intervalDegree.length; i++) {
 
-        if (weekDegree[valueSelectedDay] < intervalDegree[i]) {
+        if (weekDegree[napIndex] < intervalDegree[i]) {
             showOffer.innerHTML = offers[i];
             break;
         }
