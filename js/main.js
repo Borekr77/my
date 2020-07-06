@@ -1,33 +1,32 @@
 //Init data
 let price = 1200;
 let delivery = 500;
+let amount = price + delivery;
 let showAmount = document.querySelector("span.show-amount");
-showAmount.innerHTML = price + delivery;
+showAmount.innerHTML = amount;
 
 //Kiszállítás szöveg
 let deliveryText = document.createElement("small");
 deliveryText.className = "form-text text-muted";
-deliveryText.innerHTML = "Az ár tartalmazza a házhoz szállítási díjat (500 Ft)! (5000 Ft feletti rendelés esetén a kiszállítás ingyenes.)";
+deliveryText.innerHTML = "Az ár tartalmazza a házhoz szállítási díjat (500 Ft). 5000 Ft feletti rendelés esetén a kiszállítás ingyenes.";
 let parent = document.querySelector("#amount-text");
 parent.appendChild(deliveryText);
 
 
 //Űrlap-esemény indítja a számításokat
-document.querySelector("#order-form").addEventListener("change", calcAmount);
-document.querySelector("#order-form").addEventListener("input", calcAmount);
+document.querySelector("#form-checkboxes").addEventListener("change", calcAmount);
+document.querySelector("#amount-input").addEventListener("keyup", calcAmount);
+document.querySelector("#amount-input").addEventListener("change", calcAmount);
 
-/* Fizetendő ár kiszámítása és megjelenítése az exrák és a mennyiség alapján */
+/* Fizetendő ár kiszámítása és megjelenítése az extrák és a mennyiség alapján */
 function calcAmount() {
 
     let summa = parseInt(document.querySelector('#nothing').value);
     let cbArr = document.getElementsByName("CB");
 
-    let amountInput = document.getElementById("amount-input");
-    let amountNumber = parseInt(amountInput.value);
-    amountNumber = isNaN(amountNumber) ? 0 : amountNumber;
-
     //Extrák összeszámolása
-    let bChecked = false;
+
+    bChecked = false;
 
     for (let i = 0; i < cbArr.length; i++) {
         if (cbArr[i].checked) {
@@ -37,29 +36,47 @@ function calcAmount() {
     }
 
     if (bChecked) {
-        document.getElementById("nothing").checked = false;
+        document.querySelector("#nothing").checked = false;
     } else {
-        document.getElementById("nothing").checked = true;
+        document.querySelector("#nothing").checked = true;
     }
 
     //Mennyiség-validálás és a teljes ár kiíratása
-    let amount = amountNumber * (summa + price);
+    let amountInput = document.getElementById("amount-input");
+    let amountNumber = parseInt(amountInput.value);
+    amountNumber = isNaN(amountNumber) ? 0 : amountNumber;
 
-    if (amountNumber < 1 || amountNumber > 10) {
+    amount = amountNumber * (summa + price);
+
+    if (amountInput.value.length == 0) {
+
+        showAmount.innerHTML = 0;
+        deliveryText.style.display = "none";
+
+    } else if (amountNumber < 1 || amountNumber > 10) {
+
         alert("Minimum 1 db, maximum 10 db rendelhető!");
         amountInput.value = "1";
+        amountNumber = 1;
+        amount = amountNumber * (summa + price) + delivery;
+        showAmount.innerHTML = amount;
+        deliveryText.style.display = "block";
 
     } else if (amount < 5000) {
+
         amount += delivery;
         showAmount.innerHTML = amount;
         deliveryText.style.display = "block";
 
     } else {
+
+        amount = amountNumber * (summa + price);
         showAmount.innerHTML = amount;
         deliveryText.style.display = "none";
     }
-
 }
+
+
 
 
 //Alert üzenet eltüntetése

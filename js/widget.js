@@ -7,37 +7,6 @@ let offers = ["forró csoki",
     "jéghideg limonádé"];
 let intervalDegree = [0, 15, 20, 25, 100];
 
-/* //min, max, avg, mai hőmérséklet, mai ajánlat megjelenítése
-setTimeout(function () {
-    //window.onload = function () {
-
-    let minDegree = document.querySelector("span#min-degree");
-    let minFahrenheit = document.querySelector("span#min-fahrenheit");
-    let minCelsiusTemp = minTemp(weekDegree)
-    minDegree.innerHTML = minCelsiusTemp;
-    minFahrenheit.innerHTML = celsiusToFahrenheit(minCelsiusTemp);
-
-    let maxDegree = document.querySelector("span#max-degree");
-    let maxFahrenheit = document.querySelector("span#max-fahrenheit");
-    let maxCelsiusTemp = maxTemp(weekDegree)
-    maxDegree.innerHTML = maxCelsiusTemp;
-    maxFahrenheit.innerHTML = celsiusToFahrenheit(maxCelsiusTemp);
-
-    let avgDegree = document.querySelector("span#avg-degree");
-    let avgFahrenheit = document.querySelector("span#avg-fahrenheit");
-    let avgCelsiusTemp = avgTemp(weekDegree)
-    avgDegree.innerHTML = avgCelsiusTemp;
-    avgFahrenheit.innerHTML = celsiusToFahrenheit(avgCelsiusTemp);
-
-
-    let nap = new Date().getDay(); //number, a mai nap indexe (V-0, H-1, K-2, ...)
-    let napIndex = nap - 1;
-    let selectedIndexOfWeek = document.getElementById("days-of-week").selectedIndex;
-    selectedIndexOfWeek = String(napIndex);
-    kiir(napIndex);
-    //}
-}, 1000); */
-
 //Konverzió Fahrenheitre
 function celsiusToFahrenheit(celsiusTemp) {
     return celsiusTemp / 5 * 9 + 32;
