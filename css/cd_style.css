@@ -1,0 +1,157 @@
+@font-face {
+    font-family: "Dancing_Script";
+    src: url("fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf ");
+}
+
+h4, span, small {
+    font-family: "Dancing_Script";
+}
+
+h4 {
+    text-align: center;
+    font-size: 2em;
+    margin: auto;
+}
+
+#dTime {
+    display:block;
+    position:relative;
+    text-align:center;
+    padding:0.8em 0px;
+}
+
+#dTime > span {
+    display:inline-block;
+    position:relative;
+    padding:0.4em;
+    margin:0px 0.2em;
+}
+
+#dTime > span > span {
+    display:block;
+    position:relative;
+    padding:0.2em;
+}
+
+#dTime > span > span:first-child {font-size:1.33em;}
+
+
+/* HT
+
+html, body {
+    display:block;
+    position:relative;
+    width:100%;
+    height:100%;
+    min-height:100%;
+    margin:auto;
+    padding:0px;
+    background-color:#756043;
+    font-family:"Alphabetized Cassette Tapes",Arial;
+    font-size:32px;
+    font-size:3.5vh;
+    color:#254065;
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor:default;
+}
+
+body:before {
+    content:'';
+    display:block;
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    z-index:1;
+    background-image:url('https://1-app.hu/countdown/bg.jpg');
+    background-position:50% 50%;
+    background-size:auto 100%;
+    background-repeat:no-repeat;
+    backgrond-color:#756043;
+}
+
+#container {
+    display:flex;
+    align-items:stretch;
+    justify-content:center;
+    width:100%;
+    height:100%;
+    min-height:100vh;
+    z-index:3;
+}
+
+#content-box {
+    position:relative;
+    z-index:9;
+    min-width:16em;
+    margin:2em 2.5em 3em 0px;
+    padding-top:1em;
+}
+
+h1 {
+    text-align:center;
+    font-size:2em;
+    font-weight:normal;
+    margin:auto;
+}
+
+#dTime {
+    display:block;
+    position:relative;
+    text-align:center;
+    padding:0.8em 0px;
+}
+
+#dTime > span {
+    display:inline-block;
+    position:relative;
+    padding:0.4em;
+    margin:0px 0.2em;
+}
+
+#dTime > span > span {
+    display:block;
+    position:relative;
+    padding:0.2em;
+}
+
+#dTime > span > span:first-child {font-size:1.33em;}
+
+#loading {
+    display:block;
+    position:relative;
+    width:12em;
+    height:0.8em;
+    margin:auto;
+    border:1px solid #254065;
+    border-radius:0.2em;
+    overflow:hidden;
+}
+
+#loading > span {
+    display:block;
+    position:absolute;
+    width:0%;
+    height:100%;
+    background-color:#254065;
+    overflow:hidden;
+    transition:width 500ms linear;}
+
+#loading::before, #loading > span::before {
+    content:'Hamarosan...';
+    display:block;
+    position:absolute;
+    width:calc(12em / 0.7);
+    text-align:center;
+    line-height:calc(0.8em / 0.7);
+    font-size:0.7em;
+    font-style:italic;
+}
+
+#loading > span::before {color:#c8deec;} */

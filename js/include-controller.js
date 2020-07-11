@@ -23,8 +23,22 @@ const callback2 = () => {
   avgFahrenheit.innerHTML = celsiusToFahrenheit(avgCelsiusTemp);
 
   let nap = new Date().getDay(); //number, a mai nap indexe (V-0, H-1, K-2, ...)
-  let napIndex = nap - 1;
+
+  let napIndex = (nap + 6) % 7;
+
+  /* 
+  let napIndex;
+  if (nap != 0) {
+    napIndex = nap - 1;
+  } else {
+    napIndex = 6;
+  } */
+
+
   document.getElementById("days-of-week").selectedIndex = String(napIndex);
   kiir(napIndex);
 };
 includeHTML("weather.html", "weather-included", callback2);
+
+const callback3 = () => { };
+includeHTML("countdown.html", "countdown-included", callback3);

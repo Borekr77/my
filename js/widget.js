@@ -44,6 +44,7 @@ function avgTemp(weekDegree) {
 }
 
 
+
 /* Select-change-re lefutó függvény
     - kiválasztott nap hőmérséklete
     - fahrenheitben is
