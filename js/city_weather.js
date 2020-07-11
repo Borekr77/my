@@ -27,8 +27,8 @@ function drawWeather(d) {
 
 
     if (d.weather[0].description == 'few clouds') {
-        document.getElementById("weather").style.background = 'linear-gradient(rgba(135, 206, 250, 0.5), rgba(255, 255, 0, 0.5)), url("../img/cloudy.png")';
+        document.getElementById("weather").style.background = 'linear-gradient(rgba(135, 206, 250, 0.5), rgba(255, 255, 0, 0.5)), url("img/cloudy.png")';
     } else {
-        document.getElementById("weather").style.background = 'linear-gradient(rgba(135, 206, 250, 0.5), rgba(255, 255, 0, 0.5)), url("../img/sunny.png")';
+        document.getElementById("weather").style.background = 'linear-gradient(rgba(135, 206, 250, 0.5), rgba(255, 255, 0, 0.5)), url("img/sunny.png")';
     }
 }
