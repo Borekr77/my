@@ -16,5 +16,5 @@ var x = setInterval(function () {
     document.getElementById("dTimeHours").innerHTML = ((hours <= 9) ? ('0') : ('')) + hours;
     document.getElementById("dTimeMinutes").innerHTML = ((minutes <= 9) ? ('0') : ('')) + minutes;
     document.getElementById("dTimeSeconds").innerHTML = ((seconds <= 9) ? ('0') : ('')) + seconds;
-    document.querySelector('#loading > span').style.width = (Math.round((now - startDate) / (endDate - startDate) * 10000) / 100) + "%";
+    /* document.querySelector('#loading > span').style.width = (Math.round((now - startDate) / (endDate - startDate) * 10000) / 100) + "%"; */
 }, 1000);

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="js/include.js"></script>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Weather</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="navbar-included"></div>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-12 col-md-4">
+                <fieldset>
+                    <legend>Choose city</legend>
+                    <form id="city-form">
+                        <div class="form-group">
+                            <label for="city-name">City name:</label>
+                            <input id="city-name" name="city-name" type="text" class="form-control"
+                                placeholder="e.g. Rome" />
+                        </div>
+                        <div class="form-group">
+                            <label for="country-code">Country code:</label>
+                            <input id="country-code" name="country-code" type="text" class="form-control"
+                                placeholder="e.g. IT" />
+                        </div>
+                        <div class="form-group">
+                            <button id="weatherBtn" class="btn btn-primary" type="button">Get weather</button>
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+
+            <div id="weather" class="parent">
+                <div class="div1"><span id="location"></span> </div>
+                <div class="div2"> </div>
+                <div class="div3"> </div>
+                <div class="div4"> </div>
+                <div class="div5"> </div>
+                <div class="div6"> </div>
+                <div class="div7" id="description"></div>
+                <div class="div8"><span id="temp"></span></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/city_weather_mod.js"></script>
+    <script src="js/include-controller.js"></script>
+
+
+</body>
+
+</html>

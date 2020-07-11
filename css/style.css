@@ -3,10 +3,6 @@
 .parent {
     width: 512px;
     height: 512px;
-    /* background: 
-    linear-gradient(rgba(135, 206, 250, 0.5), rgba(255, 255, 0, 0.5)); */
-    /* url("../img/sunny.png") */
-     /* url("../img/cloudy.png") */
     margin: auto;
     padding: 20px;
     color: rgba(0,0,0, .8);
@@ -31,3 +27,4 @@
     .div8 { grid-area: 4 / 3 / 5 / 5; text-align: right; }
     
     .div1, .div7, .div8 {padding-top: 25px; }
+
