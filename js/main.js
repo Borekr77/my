@@ -58,6 +58,13 @@ function calcAmount() {
         alert("Minimum 1 db, maximum 10 db rendelhető!");
         amountInput.value = "1";
         amountNumber = 1;
+        
+        var check=document.querySelectorAll(".form-check-input")
+        for(let item of check){
+        if(item.value==0){item.checked=true;}else{
+        item.checked=false;}
+        }
+
         amount = amountNumber * (summa + price) + delivery;
         showAmount.innerHTML = amount;
         deliveryText.style.display = "block";

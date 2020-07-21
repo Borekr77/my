@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Küldő ablak</title>
+</head>
+
+<body>
+    <h2>Üzenet küldése</h2>
+    <form action="">
+        <fieldset>
+            <input type="button" value="Megnyitom a fogadó ablakot" onclick="openWindow()">
+            <input type="text" id="kuldottuzenet">
+            <input type="button" value="Üzenetet küldök" onclick="sendMessage()">
+        </fieldset>
+    </form>
+
+    <script>
+        let fogado;
+        const name = "popup";
+        function openWindow() {
+            fogado = window.open("uzenet2.html", name, "width=600px, height=150px");
+        }
+        function uzi() {
+            return document.querySelector("#kuldottuzenet").value;
+        }
+        function sendMessage() {
+            let message = { uz: uzi(), ido: new Date().getTime() };
+
+            fogado.postMessage(message, "*");
+            fogado.focus();
+        }
+    </script>
+
+</body>
+
+</html>
