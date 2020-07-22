@@ -10,7 +10,13 @@
 <body>
 
     <h4>Data received</h4>
-   
+    <script>
+        window.addEventListener("message", function (event) {
+
+            document.write("Data Received: <br><br> ", event.data);
+
+        });
+    </script>
 
 </body>
 
