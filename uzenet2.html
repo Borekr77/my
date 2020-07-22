@@ -9,23 +9,17 @@
 
 <body>
     <form action="">
-        <h2>Üzenet fogadása</h2>
-        <fieldset>
-            <input type="text" id="uzenet" style="width: 300px">
-            <input type="button" value="Bezárom" id="closeBtn" onclick="closeWindow()">
-        </fieldset>
+      <h2>Üzenet fogadása</h2>
+      <fieldset>
+        <input type="text" id="uzenet" style="width: 300px" />
+      </fieldset>
     </form>
 
     <script>
-        window.addEventListener("message", (event) => {
-            let msg = document.querySelector("#uzenet");
-            msg.value = `Üzenet: ${event.data.uz} ideje: ${event.data.ido}`;
-        })
-
-        function closeWindow() {
-            window.close();
-        }
+      window.addEventListener("message", event => {
+        let msg = document.querySelector("#uzenet");
+        msg.value = `Üzenet: ${event.data.uz} ideje: ${event.data.ido}`;
+      });
     </script>
-</body>
-
+  </body>
 </html>
