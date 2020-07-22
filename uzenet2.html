@@ -17,8 +17,7 @@
 
     <script>
       window.addEventListener("message", event => {
-        let msg = document.querySelector("#uzenet");
-        msg.value = `Üzenet: ${event.data.uz} ideje: ${event.data.ido}`;
+        document.querySelector("#uzenet").value = `Üzenet: ${event.data.uz} ideje: ${event.data.ido}`;
       });
     </script>
   </body>
